@@ -242,7 +242,8 @@ async def sign_up(user: UserCreate, session: Annotated[Session, Depends(get_sess
     favorite = Playlist(label="_favorite")
     library = Playlist(label="_library")
 
-    db_user.playlists.extend(favorite, library)
+    db_user.playlists.append(favorite)
+    db_user.playlists.append(library)
     session.add(db_user)
     session.commit()
 
