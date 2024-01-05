@@ -1,0 +1,10 @@
+[Unit]
+Description=Moon API
+
+[Service]
+Type=simple
+ExecStart=/home/jay/code/moon-api/venv/bin/uvicorn --app-dir /home/jay/code/moon-api/src main:app --host 0.0.0.0 --port 8001
+WorkingDirectory=/home/jay/code/moon-api/
+
+[Install]
+WantedBy=default.target
